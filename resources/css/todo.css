@@ -67,7 +67,7 @@ main {
     width: 90%;
 }
 .textBox {
-    width: 100%;
+    width: 90%;
     margin: 20px;
     padding: 10px;
     border: none;
@@ -110,7 +110,7 @@ main {
     display: block;
 }
 
-#doneButton {
+#doneButton, #doneInSettings {
     margin: 30px;
     width: 100px;
     height: 50px;

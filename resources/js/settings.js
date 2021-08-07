@@ -22,12 +22,17 @@ window.onload = function () {
 
     const preview = document.getElementById('preview');
 
+    const doneButton = document.getElementById('doneInSettings');
+    const wrapperAll = document.getElementsByClassName('wrapper_all');
+    const textBox = document.getElementsByClassName('textBox');
+
     function updateInnerText(label, input) {
         label.innerText = input.value;
         sampleText.innerText = "Hello World!";
         sampleText.style.color = `hsl(${hueValueText.innerText},${satValueText.innerText}%,${lightValueText.innerText}%)`;
         preview.style.background = `linear-gradient(hsl(${hueValueBackTop.innerText},${satValueBackTop.innerText}%,${lightValueBackTop.innerText}%),
         hsl(${hueValueBackBttm.innerText},${satValueBackBttm.innerText}%,${lightValueBackBttm.innerText}%))`;
+
     }
 
     function updateValueFactory(label, input) {

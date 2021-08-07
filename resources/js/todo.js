@@ -1,5 +1,4 @@
 
-
 window.onload = function () {
     const date = document.getElementById('date');
     const day = new Date();
