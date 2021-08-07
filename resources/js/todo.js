@@ -1,10 +1,65 @@
+
+
 window.onload = function () {
     const date = document.getElementById('date');
     const day = new Date();
     date.innerText = day.toDateString();
     let i = 0;
+    let j = 0;
     const countTasks = document.getElementById('count-tasks');
-    countTasks.innerText = `${i} tasks`;
+    countTasks.innerText = `${i} tasks / ${j} completed`;
+
+    function addItem() {
+        //
+        const wrapper = addWrapper();
+        const textDiv = addTextDiv();
+        const div = addDiv();
+        const textBox = addTextBox();
+        const checkBox = addCheckBox();
+        const bin = addBin();
+
+        //
+        wrapper.appendChild(textDiv);
+        wrapper.appendChild(div);
+
+        textDiv.appendChild(textBox);
+        div.appendChild(checkBox);
+        div.appendChild(bin);
+        //
+        checkBox.addEventListener('change',function (e){
+            if(e.target.checked){
+                textBox.style.textDecoration = "line-through";
+                j++;
+                countTasks.innerText = `${i} tasks / ${j} completed`;
+            } else {
+                textBox.style.textDecoration = "none";
+                j--;
+                countTasks.innerText = `${i} tasks / ${j} completed`;
+            }
+        })
+
+        bin.addEventListener('click',function(){
+            i--;
+            wrapper.remove();
+            countTasks.innerText = `${i} tasks / ${j} completed`;
+        })
+
+        function changeButton(){
+            checkBox.style.display = 'none';
+            bin.style.display = 'block';
+        }
+
+        editButton.addEventListener('click',changeButton);
+
+        doneButton.addEventListener('click',function(){
+            addButton.style.display = 'block';
+            doneButton.style.display = 'none';
+            checkBox.style.display = 'block';
+            bin.style.display = 'none';
+        });
+        i++;
+        countTasks.innerText = `${i} tasks / ${j} completed`;
+    }
 
     function addWrapper() {
         const newWrapper = document.createElement('div');
@@ -12,20 +67,15 @@ window.onload = function () {
         newWrapper.className = "wrapper";
         document.getElementById('container').appendChild(newWrapper);
 
-        addTextDiv();
-        addDiv();
-
-        i++;
-        countTasks.innerText = `${i} tasks`;
+        return newWrapper;
     }
 
     function addTextDiv() {
         const newTextDiv = document.createElement('div');
         newTextDiv.id = `textDiv${i}`;
         newTextDiv.className = "textDiv";
-        document.getElementById(`wrapper${i}`).appendChild(newTextDiv);
 
-        addTextBox();
+        return newTextDiv;
     }
 
     function addTextBox() {
@@ -36,17 +86,16 @@ window.onload = function () {
         textBox.type = "textBox";
         textBox.maxLength = 45;
         textBox.value = textBox.innerText;
-        document.getElementById(`textDiv${i}`).appendChild(textBox);
+        return textBox;
     }
 
     function addDiv() {
         const newDiv = document.createElement('div');
         newDiv.id = `box${i}`;
         newDiv.className = "box";
-        document.getElementById(`wrapper${i}`).appendChild(newDiv);
 
-        addCheckBox();
-        addBin();
+        return newDiv;
+
     }
 
     function addCheckBox() {
@@ -56,18 +105,36 @@ window.onload = function () {
         checkBox.id = `checkBox${i}`;
         checkBox.value = "false";
         checkBox.type = "checkbox";
-        document.getElementById(`box${i}`).appendChild(checkBox);
+ 
+        return checkBox;
     }
 
     function addBin() {
         const bin = document.createElement('button');
         bin.className = "bin";
-        document.getElementById(`box${i}`).appendChild(bin);
+        bin.id = `bin${i}`;
+
+        return bin;
     }
 
-    const button = document.getElementById('addButton');
-    button.addEventListener('click', addWrapper);
+    //Button change
+    const addButton = document.getElementById('addButton');
+    addButton.addEventListener('click', addItem);
+
+    const doneButton = document.getElementById('doneButton');
+
+    function changeDisplay(){
+        addButton.style.display = 'none';
+        doneButton.style.display = 'block';
+    }
+
+    const editButton = document.getElementById('edit');
+    editButton.addEventListener('click',changeDisplay);
+
+
+    doneButton.addEventListener('click',function(){
+        addButton.style.display = 'block';
+        doneButton.style.display = 'none';
+    });
 
 };
-
-
