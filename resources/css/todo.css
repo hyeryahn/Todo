@@ -71,8 +71,9 @@ main {
 
 .wrapper {
     border: 1px solid lightgray;
-    min-width: 350px;
-    width: 90%;
+    min-width: 300px;
+    width: 95%;
+    max-width: 450px;
     min-height: 50px;
     padding: 0px;
     margin: 20px 0px;
@@ -84,7 +85,7 @@ main {
 }
 
 .textDiv{
-    width: 95%;
+    width: 90%;
 }
 .textBox {
     width: 100%;
