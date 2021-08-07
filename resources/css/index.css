@@ -1,0 +1,20 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Rubik",sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    
+}
+
+.wrapper_all{
+    max-width: 550px;
+    width: 100vw;
+    min-height: 500px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(hsl(0, 100%, 75%),hsla(248, 53%, 58%, 0.5));
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="resources/css/settings.css" type="text/css">
+    <link rel="stylesheet" href="resources/css/index.css" type="text/css">
+    <script src="resources/js/settings.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="wrapper_all">
+        <header>
+            <div class="pageName">
+                <span>Settings</span>
+            </div>
+        </header>
+        <main id="container">
+            <div id="panel">
+                <div clsss="sub-head">
+                    <span id="select">SELECT YOUR COLOR</span>
+                </div>
+ 
+                <div class="div-container">
+                    <div class="sub-box">
+                        <span id="back">Background Color</span>
+                    </div>
+                    <div class="form-container">
+                        <form>
+                            <label>HUE</label>
+                            <input type="range" name="hue" id="hue-back" min="0" max="359" value="0">
+                            <label for="hue-back" id="hueValue-back" name="hueValue">0</label>
+                        </form>
+                        <form>
+                            <label>SATURATION</label>
+                            <input type="range" name="saturation" id="saturation-back" min="0" max="100" value="0">
+                            <label for="saturation-back" id="satValue-back" name="satValue">0</label>
+                        </form>
+                        <form>
+                            <label>LIGHTNESS</label>
+                            <input type="range" name="lightness" id="lightness-back" min="0" max="100" value="0">
+                            <label for="lightness-back" id="lightValue-back" name="lightValue">0</label>
+                        </form>
+                    </div>
+                    <div class="sub-box">
+                        <span id="back">Text Color</span>
+                    </div>
+                    <div class="form-container">
+                        <form>
+                            <label>HUE</label>
+                            <input type="range" name="hue" id="hue-text" min="0" max="359" value="0">
+                            <label for="hue-text" id="hueValue-text" name="hueValue">0</label>
+                        </form>
+                        <form>
+                            <label>SATURATION</label>
+                            <input type="range" name="saturation" id="saturation-text" min="0" max="100" value="0">
+                            <label for="saturation-text" id="satValue-text" name="satValue">0</label>
+                        </form>
+                        <form>
+                            <label>LIGHTNESS</label>
+                            <input type="range" name="lightness" id="lightness-text" min="0" max="100" value="0">
+                            <label for="lightness-text" id="lightValue-text" name="lightValue">0</label>
+                        </form>
+                    </div>
+                    <div id="preview">
+
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer id="footer">
+            <button id="doneButton">완료</button>
+        </footer>
+    </div>
+</body>
+
+</html>
