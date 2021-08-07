@@ -1,0 +1,96 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Rubik",sans-serif;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    
+}
+
+.wrapper_all{
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(hsl(0, 100%, 75%),hsla(248, 53%, 58%, 0.5));
+}
+
+.date {
+    width: 100%;
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+#count-tasks {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    
+    padding: 10px 0;    
+}
+
+main {
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    border: 1px solid lightgray;
+    width: 498px;
+    min-height: 50px;
+    padding: 0px;
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+}
+
+.textDiv{
+    width: 400px;
+}
+
+.textBox {
+    width: 100%;
+    margin: 20px;
+    border: 1px solid lightgray;
+}
+
+.checkBox {
+    margin: 22px;
+    border: none;
+    background-color: greenyellow;
+    border-radius: 25px;
+    width: 25px;
+}
+
+.bin {
+    background-image: url("../images/bin_closed.png");
+    background-size: 100%;
+    width: 25px;
+    height: 25px;
+    margin: 20px;
+    border: none;
+    display: none;
+}
+
+#footer {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#addButton {
+    margin: 30px;
+    width: 50px;
+    height: 50px;
+    background-color:hsla(252, 100%, 37%, 0.5);
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
