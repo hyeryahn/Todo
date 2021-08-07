@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/hyeryahn/Todo.git"
   },
-  "homepage": "http://hyeryahn.github.io/Todo.git",
+  "homepage": "https://hyeryahn.github.io/Todo/",
   "author": "",
   "license": "ISC",
   "devDependencies": {
