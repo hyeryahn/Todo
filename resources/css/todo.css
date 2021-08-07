@@ -93,6 +93,7 @@ main {
     padding: 10px;
     border: none;
     background-color: inherit;
+    font-size: 20px;
 }
 
 .checkBox {
