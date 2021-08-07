@@ -1,10 +1,17 @@
 window.onload = function () {
-    const hueBack = document.getElementById('hue-back');
-    const saturationBack = document.getElementById('saturation-back');
-    const lightnessBack = document.getElementById('lightness-back');
-    const hueValueBack = document.getElementById('hueValue-back');
-    const satValueBack = document.getElementById('satValue-back');
-    const lightValueBack = document.getElementById('lightValue-back');
+    const hueBackTop = document.getElementById('hue-backTop');
+    const saturationBackTop = document.getElementById('saturation-backTop');
+    const lightnessBackTop = document.getElementById('lightness-backTop');
+    const hueValueBackTop = document.getElementById('hueValue-backTop');
+    const satValueBackTop = document.getElementById('satValue-backTop');
+    const lightValueBackTop = document.getElementById('lightValue-backTop');
+
+    const hueBackBttm = document.getElementById('hue-backBttm');
+    const saturationBackBttm = document.getElementById('saturation-backBttm');
+    const lightnessBackBttm = document.getElementById('lightness-backBttm');
+    const hueValueBackBttm = document.getElementById('hueValue-backBttm');
+    const satValueBackBttm = document.getElementById('satValue-backBttm');
+    const lightValueBackBttm = document.getElementById('lightValue-backBttm');
 
     const hueText = document.getElementById('hue-text');
     const saturationText = document.getElementById('saturation-text');
@@ -19,16 +26,21 @@ window.onload = function () {
         label.innerText = input.value;
         sampleText.innerText = "Hello World!";
         sampleText.style.color = `hsl(${hueValueText.innerText},${satValueText.innerText}%,${lightValueText.innerText}%)`;
-        preview.style.backgroundColor = `hsl(${hueValueBack.innerText},${satValueBack.innerText}%,${lightValueBack.innerText}%)`;
+        preview.style.background = `linear-gradient(hsl(${hueValueBackTop.innerText},${satValueBackTop.innerText}%,${lightValueBackTop.innerText}%),
+        hsl(${hueValueBackBttm.innerText},${satValueBackBttm.innerText}%,${lightValueBackBttm.innerText}%))`;
     }
 
     function updateValueFactory(label, input) {
         return () => updateInnerText(label, input);
     }
 
-    hueBack.addEventListener('change', updateValueFactory(hueValueBack, hueBack));
-    saturationBack.addEventListener('change', updateValueFactory(satValueBack, saturationBack));
-    lightnessBack.addEventListener('change', updateValueFactory(lightValueBack, lightnessBack));
+    hueBackTop.addEventListener('change', updateValueFactory(hueValueBackTop, hueBackTop));
+    saturationBackTop.addEventListener('change', updateValueFactory(satValueBackTop, saturationBackTop));
+    lightnessBackTop.addEventListener('change', updateValueFactory(lightValueBackTop, lightnessBackTop));
+
+    hueBackBttm.addEventListener('change', updateValueFactory(hueValueBackBttm, hueBackBttm));
+    saturationBackBttm.addEventListener('change', updateValueFactory(satValueBackBttm, saturationBackBttm));
+    lightnessBackBttm.addEventListener('change', updateValueFactory(lightValueBackBttm, lightnessBackBttm));
 
     hueText.addEventListener('change', updateValueFactory(hueValueText, hueText));
     saturationText.addEventListener('change', updateValueFactory(satValueText, saturationText));
