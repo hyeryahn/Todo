@@ -12,9 +12,12 @@
     "type": "git",
     "url": "https://github.com/hyeryahn/Todo.git"
   },
-  "homepage": "https://hyeryahn.github.io/Todo/",
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hyeryahn/Todo/issues"
+  },
+  "homepage": "https://hyeryahn.github.io/Todo/",
   "devDependencies": {
     "gh-pages": "^3.2.3"
   }
