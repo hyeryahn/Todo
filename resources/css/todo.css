@@ -72,7 +72,7 @@ main {
 .wrapper {
     border: 1px solid lightgray;
     min-width: 300px;
-    width: 95%;
+    width: 95vw;
     max-width: 450px;
     min-height: 50px;
     padding: 0px;
