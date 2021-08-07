@@ -51,5 +51,4 @@ window.onload = function () {
 
     preview.appendChild(sampleText);
 
-
 };
