@@ -1,5 +1,9 @@
-
 window.onload = function () {
+    const wrapperAll = document.getElementById('wrapper_all');
+    if(localStorage.getItem('background') !== undefined){
+        wrapperAll.style.background = localStorage.getItem('background');
+    }
+
     const date = document.getElementById('date');
     const day = new Date();
     date.innerText = day.toDateString();
@@ -94,7 +98,9 @@ window.onload = function () {
         textBox.type = "textBox";
         textBox.maxLength = 45;
         textBox.value = textBox.innerText;
-        
+        if(localStorage.getItem('color') !== undefined){
+            textBox.style.color = localStorage.getItem('color');    
+        }
 
         return textBox;
     }

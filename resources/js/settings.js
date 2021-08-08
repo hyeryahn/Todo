@@ -32,6 +32,9 @@ window.onload = function () {
         sampleText.style.color = `hsl(${hueValueText.innerText},${satValueText.innerText}%,${lightValueText.innerText}%)`;
         preview.style.background = `linear-gradient(hsl(${hueValueBackTop.innerText},${satValueBackTop.innerText}%,${lightValueBackTop.innerText}%),
         hsl(${hueValueBackBttm.innerText},${satValueBackBttm.innerText}%,${lightValueBackBttm.innerText}%))`;
+        localStorage['background'] = `linear-gradient(hsl(${hueValueBackTop.innerText},${satValueBackTop.innerText}%,${lightValueBackTop.innerText}%),
+        hsl(${hueValueBackBttm.innerText},${satValueBackBttm.innerText}%,${lightValueBackBttm.innerText}%))`;
+        localStorage['color'] = `hsl(${hueValueText.innerText},${satValueText.innerText}%,${lightValueText.innerText}%)`;
 
     }
 
