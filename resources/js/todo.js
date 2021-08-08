@@ -8,6 +8,7 @@ window.onload = function () {
     const day = new Date();
     date.innerText = day.toDateString();
 
+    let CountTextBox = 0;
     let keyTextBox = [];
     for (const key in localStorage) {
         for (let k = 0; k < localStorage.length; k++) {
@@ -38,7 +39,6 @@ window.onload = function () {
                         j--;
                         countTasks.innerText = `${i} tasks / ${j} completed`;
                     }
-                    
                 })       
             }
         }        
@@ -89,12 +89,12 @@ window.onload = function () {
             countTasks.innerText = `${i} tasks / ${j} completed`;
         })
 
-        function changeButton() {
+        function showBin() {
             checkBox.style.display = 'none';
             bin.style.display = 'block';
         }
 
-        editButton.addEventListener('click', changeButton);
+        editButton.addEventListener('click', showBin);
 
         doneButton.addEventListener('click', function () {
             addButton.style.display = 'block';
@@ -141,6 +141,7 @@ window.onload = function () {
         if (localStorage.getItem('color') !== undefined) {
             textBox.style.color = localStorage.getItem('color');
         }
+        CountTextBox++;
 
         return textBox;
     }
@@ -179,14 +180,13 @@ window.onload = function () {
 
     const doneButton = document.getElementById('doneButton');
 
-    function changeDisplay() {
+    function changeButtonDisplay() {
         addButton.style.display = 'none';
         doneButton.style.display = 'block';
     }
 
     const editButton = document.getElementById('edit');
-    editButton.addEventListener('click', changeDisplay);
-
+    editButton.addEventListener('click', changeButtonDisplay);
 
     doneButton.addEventListener('click', function () {
         addButton.style.display = 'block';
