@@ -62,5 +62,8 @@ window.onload = function () {
 
     preview.appendChild(sampleText);
     
-    
+    const reset = document.getElementById('reset');
+    reset.addEventListener('click',function(){
+        localStorage.clear();
+    })
 };
