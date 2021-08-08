@@ -1,4 +1,5 @@
 window.onload = function () {
+    
     const hueBackTop = document.getElementById('hue-backTop');
     const saturationBackTop = document.getElementById('saturation-backTop');
     const lightnessBackTop = document.getElementById('lightness-backTop');
@@ -22,9 +23,11 @@ window.onload = function () {
 
     const preview = document.getElementById('preview');
 
-    const doneButton = document.getElementById('doneInSettings');
-    const wrapperAll = document.getElementsByClassName('wrapper_all');
-    const textBox = document.getElementsByClassName('textBox');
+    const wrapperAll = document.getElementById('wrapper_all');
+
+    if (localStorage.getItem('background') !== undefined) {
+        wrapperAll.style.background = localStorage.getItem('background');
+    }
 
     function updateInnerText(label, input) {
         label.innerText = input.value;
@@ -58,5 +61,6 @@ window.onload = function () {
     sampleText.id = 'sample';
 
     preview.appendChild(sampleText);
-
+    
+    
 };
