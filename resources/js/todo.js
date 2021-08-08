@@ -9,6 +9,7 @@ window.onload = function () {
     countTasks.innerText = `${i} tasks / ${j} completed`;
 
     function addItem() {
+        const index = i;
         //
         const wrapper = addWrapper();
         const textDiv = addTextDiv();
@@ -40,6 +41,7 @@ window.onload = function () {
         bin.addEventListener('click',function(){
             i--;
             wrapper.remove();
+            localStorage.removeItem(`textBox${i}`);
             countTasks.innerText = `${i} tasks / ${j} completed`;
         })
 
@@ -56,6 +58,13 @@ window.onload = function () {
             checkBox.style.display = 'block';
             bin.style.display = 'none';
         });
+        
+        function updateStorageData(){
+            localStorage[`textBox${index}`] = textBox.value;
+        }
+
+        textBox.addEventListener('change',updateStorageData);
+
         i++;
         countTasks.innerText = `${i} tasks / ${j} completed`;
     }
@@ -85,6 +94,8 @@ window.onload = function () {
         textBox.type = "textBox";
         textBox.maxLength = 45;
         textBox.value = textBox.innerText;
+        
+
         return textBox;
     }
 
